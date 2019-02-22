@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Test1;
+use App\Test2;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -36,8 +36,12 @@ class Test2Controller extends BaseController
             $fh = fopen("$path/$filename", 'r');
 
             if ($fh) {
+                // Discard the headings
+                $line = fgets($fh);
+
                 while (($line = fgets($fh)) !== false) {
                     // process the line read.
+                    $line = trim($line);
 
                     $data = explode(',', $line);
                     $dob = explode('/', $data[5]);
