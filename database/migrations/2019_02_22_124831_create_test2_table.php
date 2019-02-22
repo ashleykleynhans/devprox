@@ -15,6 +15,11 @@ class CreateTest2Table extends Migration
     {
         Schema::create('test2', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name', 100);
+            $table->string('surname', 100);
+            $table->string('initials', 5);
+            $table->tinyInteger('age')->unsigned();
+            $table->date('date_of_birth');
             $table->timestamps();
         });
     }
