@@ -59,6 +59,8 @@ Eg:
 
 Where 100 is the number of records you would like to generate 
 
+The CSV file will be output to the "storage" folder.
+
 2. Upload the Generated CSV file into the database
 
 You can either access the landing page at: http://127.0.0.1 and click through to each test or alternatively directly

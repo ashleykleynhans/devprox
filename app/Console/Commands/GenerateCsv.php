@@ -81,9 +81,9 @@ class GenerateCsv extends Command
         $name = $this->names[array_rand($this->names)];
         $surname = $this->surnames[array_rand($this->surnames)];
 
-        $day = rand(1, 31);
-        $month = rand(1, 12);
-        $year = rand (1940, 1990);
+        $day = mt_rand(1, 31);
+        $month = mt_rand(1, 12);
+        $year = mt_rand (1940, 1990);
 
         if ($month == 4 || $month == 6 || $month == 9 || $month == 11) {
             $day = 30;
@@ -119,7 +119,7 @@ class GenerateCsv extends Command
             $fp = fopen($output, 'w');
             fputcsv($fp, $headers);
 
-            for ($i=1; $i<=100; $i++) {
+            for ($i=1; $i<=$number; $i++) {
 
                 $key = $this->generateRandomUser();
 
