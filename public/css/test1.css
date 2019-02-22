@@ -1,0 +1,13 @@
+body {
+    margin: 50px;
+}
+
+form {
+    background-color: #eeeeee;
+    padding: 20px;
+}
+
+label {
+    width: 20%;
+    font-weight: bold;
+}
