@@ -45,8 +45,6 @@ class Test1Controller extends BaseController
         $test1->id_number = $id_number;
         $test1->date_of_birth = implode('-', array_reverse($dob));
 
-        var_dump($test1->date_of_birth);
-
         $test1->save();
         $request->session()->flash('success', 'Record was successfully saved to the database.');
 

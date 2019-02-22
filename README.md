@@ -41,11 +41,28 @@ Inside the container, log into the MySQL root administrative account:
 
 5. The App listens for incoming connections at http://127.0.0.1 (on port 80, assuming that port 80 is not already in use)
 
-## Viewing the tests
+## Test 1
 
 You can either access the landing page at: http://127.0.0.1 and click through to each test or alternatively directly
 
 * [Test1](http://127.0.0.1/test1) 
+
+## Test 2
+
+1. Creating the CSV file
+
+        docker-compose exec app php artisan csv:generate <number_of_records>
+
+Eg:
+
+        docker-compose exec app php artisan csv:generate 100
+
+Where 100 is the number of records you would like to generate 
+
+2. Upload the Generated CSV file into the database
+
+You can either access the landing page at: http://127.0.0.1 and click through to each test or alternatively directly
+
 * [Test2](http://127.0.0.1/test2) 
 
 ## Automated Tests

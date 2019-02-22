@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>DEVPROX Proficiency Test 1</title>
+        <title>DEVPROX Proficiency Test 2</title>
 
         <!-- Styles -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -21,10 +21,10 @@
             @endforeach
             </div>
 
-            <form id="test1_form" method="POST" action="/test1">
+            <form id="test1_form" method="POST" action="/test2">
                 @csrf
                 <div class="form-group" id="name-group">
-                    <label for="name">Name</label>
+                    <label for="name">CSV File</label>
                     <input type="text" id="name" name="name" value="{{ old('name') }}" />
                 </div>
 
