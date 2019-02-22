@@ -38,8 +38,12 @@ Inside the container, log into the MySQL root administrative account:
 4. Run the database migrations
 
         docker-compose exec app php artisan migrate
+        
+5. Run composer update
 
-5. The App listens for incoming connections at http://127.0.0.1 (on port 80, assuming that port 80 is not already in use)
+        docker-compose exec app composer update
+
+6. The App listens for incoming connections at http://127.0.0.1 (on port 80, assuming that port 80 is not already in use)
 
 ## Test 1
 

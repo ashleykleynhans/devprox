@@ -13,7 +13,7 @@ class CreateTest2Table extends Migration
      */
     public function up()
     {
-        Schema::create('test2', function (Blueprint $table) {
+        Schema::create('csv_import', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 100);
             $table->string('surname', 100);
@@ -31,6 +31,6 @@ class CreateTest2Table extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('test2');
+        Schema::dropIfExists('csv_import');
     }
 }
