@@ -21,7 +21,7 @@
             @endforeach
             </div>
 
-            <form id="test1_form" method="POST" action="#">
+            <form id="test1_form" method="POST" action="/test1">
                 @csrf
                 <div class="form-group" id="name-group">
                     <label for="name">Name</label>
@@ -51,6 +51,6 @@
 
     <!-- JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="/js/test1.js?ts=<? time() ?>"></script>
+    <script src="/js/test1.js"></script>
     </body>
 </html>
