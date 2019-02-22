@@ -15,9 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test1', function () {
-    return view('test1');
-});
+Route::get('/test1', 'Test1Controller@renderForm');
+Route::post('/test1', 'Test1Controller@saveForm');
 
 Route::get('/test2', function () {
     return view('test2');

@@ -13,25 +13,34 @@
     <body>
     <div class="container">
         <div class="mb-3">
-            <form>
-                <div class="form-group">
+            <div id="notifications">
+            @foreach (['danger', 'warning', 'success', 'info'] as $key)
+                @if(Session::has($key))
+                    <p class="alert alert-{{ $key }}">{{ Session::get($key) }}</p>
+                @endif
+            @endforeach
+            </div>
+
+            <form id="test1_form" method="POST" action="#">
+                @csrf
+                <div class="form-group" id="name-group">
                     <label for="name">Name</label>
-                    <input type="text" id="name" name="name" />
+                    <input type="text" id="name" name="name" value="{{ old('name') }}" />
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" id="surname-group">
                     <label for="name">Surname</label>
-                    <input type="text" id="surname" name="surname" />
+                    <input type="text" id="surname" name="surname" value="{{ old('surname') }}" />
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" id="id-group">
                     <label for="name">ID No</label>
-                    <input type="text" id="id" name="id" maxlength="13" />
+                    <input type="text" id="id_number" name="id_number" maxlength="13" value="{{ old('id_number') }}" />
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" id="dob-group">
                     <label for="name">Date of Birth</label>
-                    <input type="text" id="dob" name="dob" />
+                    <input type="text" id="date_of_birth" name="date_of_birth" value="{{ old('date_of_birth') }}" />
                 </div>
 
                 <button type="submit" id="submit" class="btn btn-primary">POST</button>
@@ -42,5 +51,6 @@
 
     <!-- JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/js/test1.js?ts=<? time() ?>"></script>
     </body>
 </html>
