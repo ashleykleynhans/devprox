@@ -8,6 +8,8 @@ $( document ).ready(function() {
         var surname = $('#surname').val();
         var id_number = $('#id_number').val();
         var date_of_birth = $('#date_of_birth').val();
+        var idIsValid = false;
+        var dobIsValid = false;
 
         var re = /^[a-zA-Z ]+$/;
 
@@ -28,34 +30,36 @@ $( document ).ready(function() {
         }
 
         if (!id_number.length) {
-            errors++;
             displayError('id-group', 'ID No is required');
         } else if (id_number.length < 13 || !parseInt(id_number)) {
-            errors++;
             displayError('id-group', 'A Valid ID No is required (13 digits)');
+        } else {
+            idIsValid = true;
         }
 
         if (!date_of_birth.length) {
-            errors++;
             displayError('dob-group', 'Date of Birth is required');
         } else {
-            re = /^\d{4}(-\d{2}){2}/;
+            re = /^\d{2}\/\d{2}\/\d{4}$/;
 
             if (!re.test(date_of_birth)) {
-                errors++;
-                displayError('dob-group', 'Date of Birth must be a in a valid format (YYYY-MM-DD)');
+                displayError('dob-group', 'Date of Birth must be a in a valid format (dd/mm/YYYY)');
             } else {
-                var dob = date_of_birth.split('-');
+                var dob = date_of_birth.split('/');
 
-                if (dob[1] == 0 || dob[1] > 12 || dob[2] == 0 || dob[2] > 31) {
-                    errors++;
-                    displayError('dob-group', 'Date of Birth must be a in a valid format (YYYY-MM-DD)');
+                if (dob[1] == 0 || dob[1] > 12 || dob[0] == 0 || dob[0] > 31) {
+                    displayError('dob-group', 'Date of Birth must be a in a valid format (dd/mm/YYYY)');
+                } else {
+                    dobIsValid = true;
                 }
             }
         }
 
+        if (!idIsValid || !dobIsValid) {
+            errors++;
+        }
+
         if (!errors) {
-            console.log('valid');
             $('#test1_form').submit();
             return true;
         }

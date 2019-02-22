@@ -37,11 +37,15 @@ class Test1Controller extends BaseController
             return redirect('/test1')->withInput();
         }
 
+        $dob = explode('/', $request->input('date_of_birth'));
+
         $test1 = new Test1();
         $test1->name = $request->input('name');
         $test1->surname = $request->input('surname');
-        $test1->id_number = $request->input('id_number');
-        $test1->date_of_birth = $request->input('date_of_birth');
+        $test1->id_number = $id_number;
+        $test1->date_of_birth = implode('-', array_reverse($dob));
+
+        var_dump($test1->date_of_birth);
 
         $test1->save();
         $request->session()->flash('success', 'Record was successfully saved to the database.');

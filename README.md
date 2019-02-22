@@ -48,4 +48,6 @@ You can either access the landing page at: http://127.0.0.1 and click through to
 * [Test1](http://127.0.0.1/test1) 
 * [Test2](http://127.0.0.1/test2) 
 
-## Running the automated tests
+## Automated Tests
+
+Usually I would prefer to write Automated/Unit tests for my code, but unfortunately due to time constraints, I was not able to do so.
