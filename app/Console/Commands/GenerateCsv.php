@@ -124,7 +124,7 @@ class GenerateCsv extends Command
                 $key = $this->generateRandomUser();
 
                 // Keep generating new users until we get a unique one, if the one we generated is not unique
-                while (in_array($key, $generated)) {
+                while (array_key_exists($key, $generated)) {
                     $key = $this->generateRandomUser();
                 }
 
