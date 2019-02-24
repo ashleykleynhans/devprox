@@ -43,7 +43,25 @@ Inside the container, log into the MySQL root administrative account:
 
         docker-compose exec app composer update
 
-6. The App listens for incoming connections at http://127.0.0.1 (on port 80, assuming that port 80 is not already in use)
+6. Create a .env file
+
+        docker-compose exec app cp .env.example .env
+
+7. Generate an applicate key
+
+        docker-compose exec app php artisan key:generate
+
+8. Configure the database connection, edit the .env file and set the following:
+
+        DB_CONNECTION=mysql
+        DB_HOST=db
+        DB_PORT=3306
+        DB_DATABASE=devprox
+        DB_USERNAME=devprox
+        DB_PASSWORD=D3vPr0X
+
+
+9. The App listens for incoming connections at http://127.0.0.1 (on port 80, assuming that port 80 is not already in use)
 
 ## Test 1
 
