@@ -39,11 +39,7 @@ Inside the container, log into the MySQL root administrative account:
 
         docker-compose exec app cp .env.example .env
 
-5. Generate an applicate key
-
-        docker-compose exec app php artisan key:generate
-
-6. Configure the database connection, edit the .env file and set the following:
+5. Configure the database connection, edit the .env file and set the following:
 
         DB_CONNECTION=mysql
         DB_HOST=db
@@ -52,9 +48,13 @@ Inside the container, log into the MySQL root administrative account:
         DB_USERNAME=devprox
         DB_PASSWORD=D3vPr0X
         
-7. Run composer update
+6. Run composer update
 
         docker-compose exec app composer update
+
+7. Generate an applicate key
+
+        docker-compose exec app php artisan key:generate
 
 8. Run the database migrations
 
